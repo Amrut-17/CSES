@@ -1,0 +1,25 @@
+package CSES;
+
+import java.util.Scanner;
+
+public class Repetitions {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        char prev = ' ';
+        int count = 0;
+        int max =0;
+        for (int i=0; i<str.length(); i++){
+            if (prev == str.charAt(i)){
+                count += 1;
+            }else {
+                count=0;
+            }
+            if (count > max){
+                max = count;
+            }
+            prev = str.charAt(i);
+        }
+        System.out.print(max+1);
+    }
+}
